@@ -12,7 +12,7 @@ Opt-in to the Alternate branch by doing the following:
 *Always backup your saves*
 
 ## Planned Features & Improvements
-I plan to eventually add more configuration and to move the display to the phone. Feel free to contribute by making pull requests to the [launderingstatus branch](https://github.com/YahYah-Games/Schedule-I-Mods/tree/launderingstatus).
+I plan to eventually add more configuration and to move the display to the phone. Feel free to contribute by making pull requests to the [launderingstatus branch](https://github.com/YahYah-Games/Schedule-I-Mods/tree/launderingstatus/LaunderingStatus).
 
 ## Dependencies
 These are mods that LaunderStatus depends on. Thunderstore *should* auto-install these if you're using the Mod Manager, but if you're installing mods manually, be sure to install these as well:
