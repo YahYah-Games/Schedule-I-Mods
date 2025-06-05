@@ -1,0 +1,10 @@
+{
+  "name": "LaunderingStatus",
+  "description": "A simple mod to display the time remaining for laundering from anywhere.",
+  "website_url": "https://github.com/YahYah-Games/Schedule-I-Mods/tree/main/LaunderingStatus",
+  "version_number": "1.0.0",
+  "dependencies": [
+    "LavaGang-MelonLoader-0.7.0",
+    "KaBooMa-S1API-1.6.2"
+  ]
+}
