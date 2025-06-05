@@ -1,4 +1,3 @@
-using System.Globalization;
 using MelonLoader;
 using S1API.UI;
 using ScheduleOne.DevUtilities;
