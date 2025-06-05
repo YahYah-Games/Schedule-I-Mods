@@ -13,8 +13,7 @@ namespace YahYah.Schedule1Mods.LaunderingStatus
 {
     public class ModMain : MelonMod
     {
-        private bool _initialized;
-        private GameObject _canvas;
+        private GameObject _hud;
         private Text _label;
         
         public override void OnInitializeMelon()
@@ -24,16 +23,14 @@ namespace YahYah.Schedule1Mods.LaunderingStatus
 
         public override void OnUpdate()
         {
-            if (!_initialized && GameManager.Instance != null)
+            // Wait until GameManager is initialized
+            if (GameManager.Instance == null)
             {
-                _initialized = true;
-                MelonLogger.Msg("Game Manager Initialized!");
-            }
-            
-            if (!_initialized)
                 return;
+            }
 
-            if (_canvas == null)
+            // Find a reference to the HUD only if the current reference is null
+            if (_hud == null)
             {
                 var found = GameObject.Find("HUD");
                 
@@ -41,16 +38,17 @@ namespace YahYah.Schedule1Mods.LaunderingStatus
                     return;
 
                 MelonLogger.Msg("HUD found. Beginning rendering.");
-                _canvas = found;
+                _hud = found;
                 InstantiateUI();
             }
             
+            // Find all active laundering operations
             var operations = new List<LaunderingOperation>();
             foreach (var business in Business.OwnedBusinesses)
             {
                 operations.AddRange(business.LaunderingOperations);
             }
-
+            
             if (operations.Count > 0)
             {
                 _label.text = "Laundering Operations:\n";
@@ -61,6 +59,7 @@ namespace YahYah.Schedule1Mods.LaunderingStatus
                 return;
             }
             
+            // Format and print each laundering operation to the HUD
             foreach (var operation in operations)
             {
                 var timeRemainingMinutes = operation.completionTime_Minutes - operation.minutesSinceStarted;
@@ -74,11 +73,11 @@ namespace YahYah.Schedule1Mods.LaunderingStatus
 
         private void InstantiateUI()
         {
-            _label = UIFactory.Text("Laundering Status Label", string.Empty, _canvas.transform, anchor: TextAnchor.UpperRight, style: FontStyle.Bold);
+            _label = UIFactory.Text("Laundering Status Label", string.Empty, _hud.transform, anchor: TextAnchor.UpperRight, style: FontStyle.Bold);
             _label.rectTransform.anchorMin = Vector2.one;
             _label.rectTransform.anchorMax = Vector2.one;
             _label.rectTransform.pivot = Vector2.one;
-            _label.rectTransform.anchoredPosition = Vector2.zero;
+            _label.rectTransform.anchoredPosition = -Vector2.one * 10;
             _label.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 1000);
             
             Object.Instantiate(_label);
