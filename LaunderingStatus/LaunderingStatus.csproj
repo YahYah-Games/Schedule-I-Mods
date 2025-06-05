@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.1</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>disable</Nullable>
+        <LangVersion>10</LangVersion>
+        <RootNamespace>YahYah.Schedule1Mods.LaunderingStatus</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Reference Include="Assembly-CSharp">
+        <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\Assembly-CSharp.dll</HintPath>
+      </Reference>
+      <Reference Include="Assembly-CSharp-firstpass">
+        <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\Assembly-CSharp-firstpass.dll</HintPath>
+      </Reference>
+      <Reference Include="FishNet.Runtime">
+        <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\FishNet.Runtime.dll</HintPath>
+      </Reference>
+      <Reference Include="MelonLoader">
+        <HintPath>..\..\..\AppData\Roaming\Thunderstore Mod Manager\DataFolder\ScheduleI\profiles\Default\MelonLoader\net35\MelonLoader.dll</HintPath>
+      </Reference>
+      <Reference Include="S1API">
+        <HintPath>..\..\..\AppData\Roaming\Thunderstore Mod Manager\DataFolder\ScheduleI\profiles\Default\Mods\KaBooMa-S1API\Mods\S1API.Mono.BepInEx.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.CoreModule">
+        <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.TextRenderingModule">
+        <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\UnityEngine.TextRenderingModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.UI">
+        <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Schedule I\Schedule I_Data\Managed\UnityEngine.UI.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+
+</Project>
