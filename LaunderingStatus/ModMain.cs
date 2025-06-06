@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Object = UnityEngine.Object;
 
-[assembly: MelonInfo(typeof(YahYah.Schedule1Mods.LaunderingStatus.ModMain), "LaunderingStatus", "1.0.0", "YahYah Game Studio")]
+[assembly: MelonInfo(typeof(YahYah.Schedule1Mods.LaunderingStatus.ModMain), "LaunderingStatus", "1.0.1", "YahYah Game Studio")]
 [assembly: MelonGame("TVGS", "Schedule I")]
 namespace YahYah.Schedule1Mods.LaunderingStatus
 {
@@ -77,9 +77,12 @@ namespace YahYah.Schedule1Mods.LaunderingStatus
             _label.rectTransform.anchorMax = Vector2.one;
             _label.rectTransform.pivot = Vector2.one;
             _label.rectTransform.anchoredPosition = -Vector2.one * 10;
-            _label.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 1000);
+            _label.horizontalOverflow = HorizontalWrapMode.Overflow;
             
-            Object.Instantiate(_label);
+            var instantiated = Object.Instantiate(_label);
+            var contentSizeFitter = instantiated.gameObject.AddComponent<ContentSizeFitter>();
+            contentSizeFitter.verticalFit = ContentSizeFitter.FitMode.PreferredSize;
+            contentSizeFitter.horizontalFit = ContentSizeFitter.FitMode.PreferredSize;
         }
     }
 }
